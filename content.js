@@ -54,6 +54,17 @@
             video.currentTime = Math.max(0, video.currentTime - SEEK_AMOUNT);
             handled = true;
             break;
+          case 'f':
+            // Toggle fullscreen
+            if (!document.fullscreenElement) {
+              video.requestFullscreen().catch((err) => {
+                console.warn(
+                  `Error: Unable to open fullscreen: ${err.message}`
+                );
+              });
+            } else {
+              document.exitFullscreen();
+            }
         }
       });
 
