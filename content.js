@@ -36,7 +36,7 @@
             } else {
               video.pause();
             }
-            handle = true;
+            handled = true;
             break;
           case 'l':
             // Fast forward
